@@ -34,7 +34,7 @@ These are **synthetic sanity checks**, not podcast performance.
 | Directed target resolution | 0/1 |
 | LLM comparison | Not run |
 
-All 16 unit checks passed locally using Python 3.12.14. Mock model transport checks validate the adapter, not intelligence. GitHub Actions has not run.
+All 16 unit checks passed locally using Python 3.12.14. Mock model transport checks validate the adapter, not intelligence. The first published GitHub Actions run also passed: https://github.com/AdditiveCraftsman/silent-jamie-decision-engine/actions/runs/41972118264 (implementation commit d1abb2118e688a653ab881b3d05d1bd410b7b8dc).
 
 The baseline's observed miss is `s07`: it fails to resolve the backward-looking instruction to `s04`. The fixture has no labeled duplicate, bilingual, quotation or visual-context cases, so those dimensions have **no measured evidence**. Empty diagnostic denominators are null, not perfect scores.
 
