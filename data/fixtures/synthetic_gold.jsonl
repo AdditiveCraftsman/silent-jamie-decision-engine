@@ -1,0 +1,10 @@
+{"id": "s01", "decision": "IGNORE", "priority_0_5": 0, "critical": false}
+{"id": "s02", "decision": "VERIFY_NOW", "priority_0_5": 5, "critical": true}
+{"id": "s03", "decision": "IGNORE", "priority_0_5": 0, "critical": false}
+{"id": "s04", "decision": "VERIFY_NOW", "priority_0_5": 4, "critical": true}
+{"id": "s05", "decision": "IGNORE", "priority_0_5": 0, "critical": false}
+{"id": "s06", "decision": "QUEUE", "priority_0_5": 3, "critical": false}
+{"id": "s07", "decision": "VERIFY_NOW", "priority_0_5": 5, "critical": true, "target_segment_id": "s04", "annotation": "Direct request resolves to the only recently discussed date; baseline deliberately fails to resolve referent."}
+{"id": "s08", "decision": "VERIFY_NOW", "priority_0_5": 4, "critical": true}
+{"id": "s09", "decision": "IGNORE", "priority_0_5": 0, "critical": false}
+{"id": "s10", "decision": "VERIFY_NOW", "priority_0_5": 4, "critical": true}
