@@ -4,6 +4,12 @@ A **transcript-first, evidence-aware claim-selection experiment** for a future s
 
 **Goal:** identify *which* statements deserve investigation, preserve their wording/context and speaker attribution, and choose *when* to surface a research request. **Not yet:** automatic factual verdicts, voice capture, Android PWA, autonomous web search, or a claim of proven performance.
 
+## Current result
+
+**NO-GO for real-time development: required evidence is incomplete.**
+See [results](reports/RESULTS.md), [current prior-art comparison](docs/PRIOR_ART_UPDATE.md), and [issue drafts](docs/ISSUES.md).
+Optional LLM adapter and stricter evaluation are implemented; no real model or holdout run is claimed.
+
 ## Current phase / acceptance gate
 
 1. Manually annotate a timestamped, speaker-attributed 11-minute dialogue sample.
@@ -51,8 +57,29 @@ All classifications are **prioritization**, not truth verdicts. Lack of evidence
 
 ## Status
 
-Prepared as a **Git-ready local starter**, not a remote GitHub repository. It is designed for import into a new GitHub repo called `silent-jamie-decision-engine`. The baseline has unit tests; no real JRE evaluation or external-model benchmark has yet been completed.
+Published at https://github.com/AdditiveCraftsman/silent-jamie-decision-engine. The original starter snapshot is preserved before implementation. The baseline and optional adapter have unit checks; no audio-verified JRE evaluation or model benchmark has been completed.
 
 ## License
 
 MIT for the new code and documentation in this repository only; third-party sources have their own terms. No upstream code is copied.
+
+## Reproduce the current work
+
+```sh
+python -m unittest discover -s tests -v
+python scripts/benchmark.py
+```
+
+Optional LLM inference (requires your already configured local server/model):
+
+```sh
+python -m silent_jamie.llm private_data/dev.jsonl --model EXACT_MODEL_ID -o results_private/llm.jsonl
+python -m silent_jamie.evaluate private_data/dev_gold.jsonl results_private/llm.jsonl --duration-s 660
+```
+
+For an external provider pass `--endpoint https://PROVIDER/v1/chat/completions` and
+configure `SJ_API_KEY` securely in the environment. No model is downloaded and no
+paid provider is chosen automatically. Run compatibility and pricing checks first.
+The adapter requires JSON-mode Chat Completions and stops on invalid output.
+A configured endpoint will receive transcript text; keep unpublished data local
+when permission to transmit it is unavailable. Run metadata may be private.

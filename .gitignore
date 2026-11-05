@@ -9,3 +9,6 @@ __pycache__/
 predictions.jsonl
 local_transcripts/
 private_data/
+results_private/
+*.run.json
+*.bundle

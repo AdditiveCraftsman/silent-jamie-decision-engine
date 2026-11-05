@@ -37,3 +37,14 @@ Original synthetic example gold is in `data/fixtures/synthetic_gold.jsonl`, with
 ### Readout
 
 The engine is useful only if it beats the simple baseline on priority and restraint, not merely claim count. Compare with unassisted manual work: how many claims a human editor would have wanted to review, and how many false interruptions they would tolerate.
+
+## Implementation revision — 2026-11-05
+
+See `reports/RESULTS.md` for measured versus unavailable evidence. The runnable scorer
+is turn-level; use atomic input spans before claiming atomic claim recall. P@5 now
+ranks only live alerts and uses a fixed denominator of five; precision over returned
+entries is separate. Tag diagnostic gold with `instruction`, `context`, `duplicate`,
+`restraint`, `quote`, `visual`, `bilingual`; unknown denominators return null.
+Gold may additionally contain `speaker`, `target_segment_id`, and `repeat_of`.
+Use `scripts/freeze_dataset.py` to record private hashes before model execution;
+it records attestations and does not establish reviewer independence by itself.

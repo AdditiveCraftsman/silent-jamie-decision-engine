@@ -1,0 +1,133 @@
+{
+  "dataset": "starter-synthetic",
+  "evidence_class": "synthetic sanity check, NOT real-world performance",
+  "engine": "deterministic-baseline-v0.1",
+  "python": "3.12.14",
+  "input_sha256": "5e3c032518adda33d4b7f76f10f47655ff0a343f17db2dc726f6b6832417650f",
+  "gold_sha256": "7f10a631022f3737387357975c908057abbed7fe0d49d779aa3b72dbbe599879",
+  "metrics": {
+    "n_segments": 10,
+    "n_gold_verify_now": 5,
+    "n_predicted_verify_now": 4,
+    "precision_verify_now": 1.0,
+    "recall_verify_now": 0.8,
+    "precision_at_5": 0.8,
+    "precision_at_returned": {
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1.0
+    },
+    "shortlist_size": 4,
+    "shortlist_ids": [
+      "s02",
+      "s04",
+      "s08",
+      "s10"
+    ],
+    "critical_recall": 0.8,
+    "denominators": {
+      "precision": 4,
+      "recall": 5,
+      "critical_recall": 5
+    },
+    "false_live_alerts": 0,
+    "false_live_alerts_per_10_min": 0.0,
+    "false_live_alert_ids": [],
+    "missed_critical_ids": [
+      "s07"
+    ],
+    "confusion_gold_rows_prediction_columns": {
+      "VERIFY_NOW": {
+        "VERIFY_NOW": 4,
+        "QUEUE": 0,
+        "NEEDS_CONTEXT": 1,
+        "IGNORE": 0
+      },
+      "QUEUE": {
+        "VERIFY_NOW": 0,
+        "QUEUE": 1,
+        "NEEDS_CONTEXT": 0,
+        "IGNORE": 0
+      },
+      "NEEDS_CONTEXT": {
+        "VERIFY_NOW": 0,
+        "QUEUE": 0,
+        "NEEDS_CONTEXT": 0,
+        "IGNORE": 0
+      },
+      "IGNORE": {
+        "VERIFY_NOW": 0,
+        "QUEUE": 0,
+        "NEEDS_CONTEXT": 0,
+        "IGNORE": 4
+      }
+    },
+    "diagnostic_decision_accuracy": {
+      "instruction": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "context": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "duplicate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "restraint": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "quote": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "visual": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "bilingual": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      }
+    },
+    "directed_target_accuracy": {
+      "numerator": 0,
+      "denominator": 1,
+      "value": 0.0
+    },
+    "selected_speaker_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "duplicate_live_alert_ids": [],
+    "repeat_link_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "failures": [
+      {
+        "id": "s07",
+        "gold": "VERIFY_NOW",
+        "predicted": "NEEDS_CONTEXT"
+      }
+    ],
+    "limitations": [
+      "Turn-level classification only; atomic claims may be missed within a turn.",
+      "Speaker score is metadata preservation, not audio diarization.",
+      "Context/quote semantics and priority ranks require blinded human review."
+    ]
+  },
+  "llm_status": "NOT RUN; no configured endpoint or credentials",
+  "human_reference_status": "not prepared; existing synthetic illustrative labels only"
+}

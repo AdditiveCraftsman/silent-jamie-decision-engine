@@ -7,7 +7,16 @@
   "start_hms": "03:17:00",
   "end_hms": "03:28:00",
   "transcript_storage": "not committed",
-  "speaker_alignment": "pending human verification",
-  "gold_annotations": "pending human labeling",
-  "leakage_warning": "Do not use factcheckjoerogan.com claim lists as initial selector gold."
+  "speaker_alignment": "unverified; source has no speaker labels",
+  "gold_annotations": "not completed",
+  "leakage_warning": "Do not use factcheckjoerogan.com claim lists as initial selector gold.",
+  "inspection_date": "2026-11-05",
+  "transcript_display_inspected": true,
+  "audio_alignment_verified": false,
+  "scoring_interval_seconds": [
+    11820,
+    12480
+  ],
+  "interval_convention": "half-open; audio-based split required at boundary",
+  "raw_excerpt_acquired": false
 }
